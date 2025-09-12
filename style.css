@@ -21,29 +21,23 @@ header{
     
     
 }
+.headingWrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .logo h1{
     color: white;
 }
-.logo{
-    width: 35%;
-    float: left;
 
-
-}
-.nav{
-  
-    width: 65%;
-    float: right;
-
-}
 .nav ul {
-  float: right;
-  
+  display: flex;
+  flex-direction: row;
+
 }
 .nav ul li {
-
    position: relative;
-   float: left;
     list-style: none;
     padding: 0px 10px;
 
@@ -52,9 +46,8 @@ header{
 
 
 .nav ul li ul.dropdown li {
-  margin-top: 20px;
-  display: block;
-  float: none;
+  margin-top: 5px;
+  
 
 }
 
@@ -64,7 +57,7 @@ nav ul li ul.dropdown {
   position: absolute;
   top: 100%;
   left: -30px;
-background-color: black;
+  background-color: black;
   display: none;
   border-radius: 10px;
 }
@@ -73,7 +66,7 @@ background-color: black;
 
 .nav ul li a {
   padding: 10px;
-  display: inline-block;
+  display: flex;
   text-decoration: none;
   color:   #a3a0a0;
   font-size: larger;
@@ -90,7 +83,8 @@ background-color: black;
 
 
 .nav ul li:hover > ul.dropdown{
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -106,9 +100,11 @@ background-color: black;
   }
   
 .topSection {
-    margin-top: 20px;
-    width: 100%;
-    overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .topSection h2{
@@ -124,7 +120,6 @@ img {
     border-radius: 7px;
   }
 .leftContent, .rightContent {
-    float: left;
     width: 50%;
 }
 
@@ -133,7 +128,6 @@ img {
 
 .content{
     padding-top : 60px; ;
-    float: left;
     width: 100%;
     padding-left: 20px;
     font-size:larger;
@@ -149,7 +143,6 @@ img {
     border-style: none;
     margin-top: 10px;
     font-size: 20px;
-    float: left;
     
     
 }
@@ -183,11 +176,12 @@ img {
   overflow: hidden; 
   margin: 25px 0px;
   width: 100%;
+  display: flex;
+
 }
 
-  .card1, .card2, .card3 {
+  .card{
     width: 31%;
-    float: left;
     margin-right: 3.5%;
     background: #fff;
     border: 1px solid #ccc;
@@ -197,9 +191,7 @@ img {
     overflow: hidden;
   }
   
-  .card3 {
-    margin-right: 0; 
-  }
+ 
   
   .cardTop {
     padding: 20px;
@@ -269,21 +261,6 @@ footer{
 
 
 
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.clearfix { display: inline-block; }
-/* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* close commented backslash hack */
-
-
 
 
 
@@ -293,16 +270,12 @@ footer{
         width: 100%;
     }
     .leftContent, .rightContent {
-      float: none;
       width: 100%;
       text-align: center;
   }
-    .content button{
-        float: none;
-    }
-    .card1, .card2, .card3 {
+    
+    .card {
         width: 100%;
-        float: none;
         margin-right: 0;
         margin-bottom: 20px;
         height:max-content;
@@ -321,35 +294,52 @@ footer{
     
       .nav ul {
         list-style: none;
-
+        flex-direction: column;
         padding: 0;
         margin: 0;
         text-align: center;
       }
     
       .nav ul li {
-        float: none;
         margin: 20px 0px;
       }
     
    
       .nav ul:hover{
-        display:block ;
+        display:flex ;
       }
       .nav{
         display: none;
         width: 100%;
         background: black;
         padding-top: 10px;
-        top: 70px;
+        top: 60px;
         width: auto;
         right: 0;
         position: absolute;
         z-index: 1;
+        border-radius: 7px;
       }
       .logo{
         width: auto;
+      
       }
+      .topSection ,.card-wrapper{
+        flex-direction: column;
+      }
+      nav ul li ul.dropdown {
+        top: -83px;
+        left: -203px;
+      }
+      .topSection h2{
+        font-size: 30px;
+      }
+      .cardTop h3{
+        font-size: 22px;
+      }
+
+
+
       footer{
         position: static;
 
